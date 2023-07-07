@@ -17,9 +17,18 @@ android {
             }
         }
     }
+    signingConfigs {
+        release {
+            storeFile file('..\\Infinity.jks')
+            storePassword 'Infinity'
+            keyAlias 'Infinity'
+            keyPassword 'Infinity'
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         minifiedRelease {
